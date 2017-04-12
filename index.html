@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!--<html lang="en" ng-app='app'>-->
+<html ng-app='listApp'>
+<head>
+    <!--<title>Title</title>-->
+    <script src="angular.min.js"></script>
+    <script src="script.js"></script>
+
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap-theme.css">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="panel"  ng-controller="listCtrl as ctrl">
+
+            <div class="page-header">
+                <h1>Languages</h1>
+                <h5>Пользователь: {{ctrl.data.user}}</h5>
+                <h5>Количесвто курсов: {{ctrl.data.courses.length}}</h5>
+                <h5>Общий бал: {{ctrl.data.courses.valuation.length}}</h5>
+            </div>
+
+            <div class="input-group">
+                <input class="form-control" ng-model="ctrl.courseName" type="text"/>
+                <input class="form-control" ng-model="ctrl.coursePassed" type="text"/>
+                <input class="form-control" ng-model="ctrl.courseValuation" type="number"/>
+                <span class="input-group-btn">
+                    <button class="btn btn-default" ng-click="ctrl.addCourse()">Добавить</button>
+                </span>
+            </div>
+
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Курс</th>
+                        <th>Пройден</th>
+                        <th>Оценка</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="course in ctrl.data.courses">
+                       <td>{{course.name}}</td>
+                       <td>{{course.passed}}</td>
+                       <td>{{course.valuation}}</td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+
+</body>
+</html>

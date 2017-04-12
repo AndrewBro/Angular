@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='myApp'>
+<head>
+    <script src="../angular.min.js"></script>
+    <script src="script.js"></script>
+
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap-theme.css">
+
+</head>
+<body ng-controller='myCtrl'>
+
+
+        <h2>Задание 1</h2>
+        <form>
+            <input type="text" ng-model='tempInput'/>
+            <button class='btn' ng-click='addNew()'>Add</button>
+        </form>
+        <div>
+            <p ng-repeat='task in taskArray'>{{task}}</p>
+        </div>
+
+
+
+</body>
+</html>

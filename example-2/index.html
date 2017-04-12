@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<!--<html lang="en" ng-app='app'>-->
+<html ng-app='listApp'>
+<head>
+    <!--<title>Title</title>-->
+    <script src="../angular.min.js"></script>
+    <script src="script.js"></script>
+
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap-theme.css">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body ng-controller="listCtrl">
+
+
+    <div class="container">
+        <div class="page-header">
+            <h1>Задачи на день</h1>
+            <h3>Хозяин: {{data.user}} . Количесвто дел {{data.courses.length}}</h3>
+        </div>
+        <div class="panel">
+
+            <div class="input-group">
+                <input class="form-control" ng-model="courseName"/>
+                <span class="input-group-btn">
+                    <button class="btn btn-default" ng-click="addCourse()">Добавить</button>
+                </span>
+            </div>
+
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Дело</th>
+                        <th>Сделано</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr ng-repeat="course in data.courses">
+                       <td>{{course.name}}</td>
+                        <td><input type="checkbox" ng-model="course.passed"></td>
+                       <td>
+                           <span style="{{setStyle(course.passed)}}">
+                               {{showText(course.passed)}}
+                           </span>
+                       </td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+
+
+
+
+
+<!--<div class="container">-->
+    <!--<div class="row">-->
+        <!--<div class="col-md-6">-->
+
+            <!-- 6 -->
+            <!--Controller-->
+            <!--<div ng-controller="mainCtrl">-->
+                <!--{{money1 | moneyFilter}}-->
+                <!--{{money2 | moneyFilter}}-->
+                <!--{{money3 | moneyFilter}}-->
+            <!--</div>-->
+
+
+            <!-- 5 -->
+            <!--<div foo>What is foo</div>-->
+
+
+
+            <!-- 4  -->
+            <!-- обращаем внимание на as он создает переменную, без нее проблмы со вложеностью-->
+            <!-- теперь нам в параметрах $scope не нужен, мы можем пользоваться this -->
+            <!--<div ng-controller="mainCtrl as mainCtrl">-->
+
+                <!--<div ng-controller="firstCtrl as firstCtrl">-->
+
+                    <!--<div ng-controller="secondCtrl as secondCtrl">-->
+                        <!--{{secondCtrl.myLesson}}-->
+
+                        <!--<br>-->
+
+                        <!--<button ng-click="mainCtrl.addLesson()" class="btn">Add MAIN Lesson Men !</button>-->
+                        <!--<button ng-click="Other.addLesson()" class="btn">Add OTHER Lesson Men !</button>-->
+                        <!--<button ng-click="firstCtrl.addLesson()" class="btn">Add FIRST Lesson Men !</button>-->
+
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+
+
+            <!--3-->
+            <!--<div ng-app='app'>-->
+
+                <!--<div ng-controller='myBooksCtrl'>-->
+
+                    <!--<button ng-click="showBook()" class='btn'>Show all Books</button>-->
+
+                    <!--<div ng-controller='angularBookCtrl'>-->
+                        <!--<button ng-click="showBook()" class='btn'>Show Angular Book</button>-->
+                    <!--</div>-->
+
+                    <!--<div ng-controller='emberBookCtrl'>-->
+                        <!--<button ng-click="showBook()" class='btn'>Show Ember Book</button>-->
+                    <!--</div>-->
+
+                <!--</div>-->
+
+
+                <!-- 2 -->
+                <!--   <div ng-controller='firstCtrl'>
+                    <input type="text" ng-model='myFactory.hello'/>
+                  </div>
+
+                  <div ng-controller='secondCtrl'>
+                    <input type="text" ng-model='myFactory.hello'/>
+                  </div> -->
+
+                <!-- 1 -->
+                <!--<div ng-controller='myCtrl'>-->
+                    <!--&lt;!&ndash;{{hello}}&ndash;&gt;-->
+                    <!--<input type="text" ng-model='myBook' />-->
+                    <!--{{myBook}}-->
+                <!--</div>-->
+
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</div>-->
+</body>
+</html>

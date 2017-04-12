@@ -1,0 +1,7 @@
+ /*button {*/
+     /*margin: 20px;*/
+ /*}*/
+
+ .form-control {
+     max-width: calc(100% / 3);
+ }

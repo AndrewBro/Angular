@@ -1,0 +1,35 @@
+button {
+    margin: 15px;
+}
+
+li {
+    list-style: none;
+}
+
+.box-group {
+    display: flex;
+    flex-direction: row;
+}
+
+.box {
+    border: 1px solid lightblue;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 4px;
+}
+
+.spinner {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.spinner img {
+    width: 40px;
+    height: 40px;
+}
